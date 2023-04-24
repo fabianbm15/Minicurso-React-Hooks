@@ -1,7 +1,5 @@
 .Header {
    border-radius: 20px;
-   background-color: rgb(100, 169, 226);
-   color: white;
    padding: 10px;
    display: grid;
    justify-items: center;
@@ -14,4 +12,5 @@
 .buttonDarkMode {
    width: 100px;
    height: 40px;
+   border-radius: 10px;
 }
