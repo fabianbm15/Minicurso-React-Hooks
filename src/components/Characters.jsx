@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer, useContext, useMemo } from "react";
+import React, { useEffect, useState, useReducer, useContext, useMemo, useRef } from "react";
 import Card from "./Card";
 import ThemeContext from "../context/ThemeContext";
 import "./Characters.css";
@@ -33,6 +33,7 @@ export default function Characters() {
    const [characters, setCharacters] = useState([]);
    const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
    const [search, setSearch] = useState("");
+   const searchInput = useRef(null);
    const { theme } = useContext(ThemeContext);
 
    useEffect(() => {
@@ -49,8 +50,8 @@ export default function Characters() {
       dispatch({ type: "DELETE_FROM_FAVORITE", payload: id });
    };
 
-   const handleSearch = (event) => {
-      setSearch(event.target.value);
+   const handleSearch = () => {
+      setSearch(searchInput.current.value);
    };
 
    // const filteredUsers = characters.filter((user) => {
@@ -68,7 +69,7 @@ export default function Characters() {
    return (
       <div className="Characters">
          <div className="Search">
-            <input type="text" value={search} onChange={handleSearch} />
+            <input type="text" value={search} ref={searchInput} onChange={handleSearch} />
          </div>
          <h2 className="Subtitle" style={{ color: theme.color, background: theme.background }}>
             Favorites
