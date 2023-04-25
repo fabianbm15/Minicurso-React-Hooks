@@ -10,6 +10,7 @@ export const lightTheme = {
    colorButton: "#fff",
    backgroundCard: "linear-gradient(to top right, #00B7C3, #4ADCC2)",
    titleCardColor: "#1d1e1e",
+   textColor: "#000",
 };
 
 export const darkTheme = {
@@ -20,6 +21,7 @@ export const darkTheme = {
    colorButton: "#000",
    backgroundCard: "#1d1e1e",
    titleCardColor: "#7DB3C6",
+   textColor: "#fff",
 };
 
 export default ThemeContext;
