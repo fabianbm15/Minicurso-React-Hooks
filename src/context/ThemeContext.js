@@ -11,6 +11,7 @@ export const lightTheme = {
    backgroundCard: "linear-gradient(to top right, #00B7C3, #4ADCC2)",
    titleCardColor: "#1d1e1e",
    textColor: "#000",
+   font: "",
 };
 
 export const darkTheme = {

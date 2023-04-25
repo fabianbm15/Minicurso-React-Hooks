@@ -8,10 +8,18 @@ function App() {
    const { theme } = useContext(ThemeContext);
 
    return (
-      <div style={{ backgroundColor: theme.appBackgroundColor, margin: 0 }}>
+      <div
+         style={{
+            background: theme.appBackgroundColor,
+            margin: 0,
+            fontFamily: "Courier New",
+         }}
+      >
          <div className="App" style={{ backgroundColor: theme.appBackgroundColor }}>
             <Header />
-            <Characters />
+            <div className="DivComponents">
+               <Characters />
+            </div>
          </div>
       </div>
    );

@@ -4,3 +4,13 @@
    padding: 2rem;
    text-align: center;
 }
+
+.DivComponents {
+   padding-top: 100px;
+}
+
+@media screen and (max-width: 639px) {
+   .DivComponents {
+      padding-top: 170px;
+   }
+}

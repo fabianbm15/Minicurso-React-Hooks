@@ -1,0 +1,17 @@
+.SearchContent {
+   margin: auto;
+   width: 300px;
+   height: 80px;
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+}
+
+.inputSearch {
+   width: 70%;
+   height: 30px;
+   font-family: "Courier New", Courier, monospace;
+   font-size: 20px;
+}

@@ -11,11 +11,11 @@ export default function Card({ character, handleClick, handleDelete }) {
          style={{ background: theme.backgroundCard, color: theme.titleCardColor }}
       >
          <h2>{character.name}</h2>
-         <button type="button" onClick={() => handleClick(character)}>
-            Agregar a Favoritos
+         <button className="FavButton" type="button" onClick={() => handleClick(character)}>
+            💖
          </button>
-         <button type="button" onClick={() => handleDelete(character.id)}>
-            Eliminar de Favoritos
+         <button className="FavButton" type="button" onClick={() => handleDelete(character.id)}>
+            🤍
          </button>
          <img className="image" src={character.image} alt="No se pudo cargar la imagen" />
       </div>

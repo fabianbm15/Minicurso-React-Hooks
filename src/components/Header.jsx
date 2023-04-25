@@ -13,18 +13,20 @@ export default function Header() {
    };
    return (
       <div className="Header" style={{ background: theme.background }}>
-         <h1 style={{ color: theme.color }}>ReactHooks</h1>
-         <button
-            className="buttonDarkMode"
-            type="button"
-            onClick={handleClick}
-            style={{ background: theme.backgroundButton, color: theme.colorButton }}
-         >
-            {darkMode ? "Light Mode" : "Dark Mode"}
-         </button>
-         {/* <button type="button" onClick={() => setDarkMode(!darkMode)}>
+         <div className="HeaderContent">
+            <h1 style={{ color: theme.color }}>ReactHooks</h1>
+            <button
+               className="buttonDarkMode"
+               type="button"
+               onClick={handleClick}
+               style={{ background: theme.backgroundButton, color: theme.colorButton }}
+            >
+               {darkMode ? "Light Mode" : "Dark Mode"}
+            </button>
+            {/* <button type="button" onClick={() => setDarkMode(!darkMode)}>
             {darkMode ? "Dark Mode" : "Light Mode"}
          </button> */}
+         </div>
       </div>
    );
 }

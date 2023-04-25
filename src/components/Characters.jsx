@@ -81,7 +81,7 @@ export default function Characters() {
                   Favorites is empty...
                </h3>
             ) : (
-               favorites.favorites.map((favorite, key) => {
+               favorites.favorites.map((favorite) => {
                   return (
                      <Card key={favorite.id} character={favorite} handleDelete={handleDelete} />
                   );
@@ -94,7 +94,7 @@ export default function Characters() {
             Characters
          </h2>
          <div className="Cards">
-            {filteredUsers.map((character, key) => (
+            {filteredUsers.map((character) => (
                <Card
                   key={character.id}
                   character={character}
