@@ -31,7 +31,3 @@ This application has the following features:
 
 ## Conclusion
 Thank you for checking out this React application that utilizes React Hooks to display information about the characters from Rick and Morty. We hope you enjoy using it as much as we enjoyed creating it!
-
-
-
-
