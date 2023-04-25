@@ -1,7 +1,11 @@
-import React, { useEffect, useState, useReducer, useContext, useMemo, useRef } from "react";
+import React, { useState, useReducer, useContext, useMemo, useRef, useCallback } from "react";
 import Card from "./Card";
 import ThemeContext from "../context/ThemeContext";
+import Search from "./Search";
+import useCharacters from "../hooks/useCharacters";
 import "./Characters.css";
+
+const API = "https://rickandmortyapi.com/api/character/";
 
 const initialState = {
    favorites: [],
@@ -30,17 +34,12 @@ const favoriteReducer = (state, action) => {
 };
 
 export default function Characters() {
-   const [characters, setCharacters] = useState([]);
    const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
    const [search, setSearch] = useState("");
    const searchInput = useRef(null);
    const { theme } = useContext(ThemeContext);
 
-   useEffect(() => {
-      fetch("https://rickandmortyapi.com/api/character/")
-         .then((response) => response.json())
-         .then((data) => setCharacters(data.results));
-   }, []);
+   const characters = useCharacters(API);
 
    const handleClick = (favorite) => {
       dispatch({ type: "ADD_TO_FAVORITE", payload: favorite });
@@ -50,9 +49,13 @@ export default function Characters() {
       dispatch({ type: "DELETE_FROM_FAVORITE", payload: id });
    };
 
-   const handleSearch = () => {
+   // const handleSearch = () => {
+   //    setSearch(searchInput.current.value);
+   // };
+
+   const handleSearch = useCallback(() => {
       setSearch(searchInput.current.value);
-   };
+   }, []);
 
    // const filteredUsers = characters.filter((user) => {
    //    return user.name.toLowerCase().includes(search.toLowerCase());
@@ -68,9 +71,7 @@ export default function Characters() {
 
    return (
       <div className="Characters">
-         <div className="Search">
-            <input type="text" value={search} ref={searchInput} onChange={handleSearch} />
-         </div>
+         <Search search={search} searchInput={searchInput} handleSearch={handleSearch} />
          <h2 className="Subtitle" style={{ color: theme.color, background: theme.background }}>
             Favorites
          </h2>
