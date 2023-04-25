@@ -30,4 +30,4 @@ This application has the following features:
 - Javascript
 
 ## Conclusion
-Thank you for checking out this React application that utilizes React Hooks to display information about the characters from Rick and Morty. We hope you enjoy using it as much as we enjoyed creating it!
+Thank you for checking out this React application that utilizes React Hooks to display information about the characters from Rick and Morty. I hope you enjoy it as much as I enjoyed creating it!
